@@ -4,10 +4,7 @@ require(SYSTEM . 'util/ConverterHandler.class.php');
 
 class ConvertPage extends AbstractPage
 {
-    /**
-     * code() implementirana funkcija iz AbstractPage-a pomocu GET-a uzima currency imena iz URL i iznos koji se konvertira
-     * rezultat se salje u coverter.tpl.php gdje se prikazuje
-     */
+
     public function code()
     {
         $currencyOne = $_GET['currencyOne'];

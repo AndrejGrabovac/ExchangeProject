@@ -4,10 +4,7 @@ require(SYSTEM . 'util/RateHandler.class.php');
 
 class RatePage extends AbstractPage
 {
-    /**
-     * code() provjerava je li prazan table te ako je prazan inserta najnovije rate-ove za currencies,
-     * ako je pun to znaci da ce updateat tecaje za najnoviji datum, tj insertat najnovije iznad starij rates-a
-     */
+
     public function code()
     {
         $this->template = 'rate';

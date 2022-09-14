@@ -4,10 +4,7 @@ require(SYSTEM . 'util/RateHandler.class.php');
 
 class SelectedRatePage extends AbstractPage
 {
-    /**
-     * pomocu GET uzima 3letter code iz URL-a te svom tpl.php file-u salje
-     * sve podatke vezane za currency koji selektiramo
-     */
+
     public function code()
     {
         $this->template = 'selectedrate';
