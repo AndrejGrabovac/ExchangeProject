@@ -1,6 +1,6 @@
 <?php
 include(SYSTEM . 'util/CurrenciesHandler.class.php');
-include(SYSTEM. 'model/AbstractPage.class.php');
+require_once(SYSTEM. 'model/AbstractPage.class.php');
 
 class CurrencyPage extends AbstractPage
 {

@@ -1,11 +1,11 @@
 <?php
-require('ApiHandler.class.php');
+require_once('ApiHandler.class.php');
 
 class CurrencyCRUD
 {
     public static function createCurrency($currency)
     {
-        $sql = "INSERT INTO currency VALUES ('". $currency. "')";
+        $sql = "INSERT INTO currency (code) VALUES ('". $currency. "')";
         AppCore::getDB()->sendQuery($sql);
     }
 

@@ -1,5 +1,5 @@
 <?php
-require('ApiHandler.class.php');
+require_once('ApiHandler.class.php');
 
 class ConverterHandler
 {
@@ -24,7 +24,7 @@ class ConverterHandler
             $amountDollar = (1.0 / 1.0) * (float)$amount;
             $convertedAmount = $amountDollar *  (float)$rateTwo;
         } else if ($currencyTwo == "USD") {
-            while ($row =  $rateOne->fetch_assoc()) {
+            while ($row = $rateOne->fetch_assoc()) {
                 $rowsOne[] = $row;
             }
             foreach ($rowsOne['0'] as $key => $value) {
@@ -33,7 +33,7 @@ class ConverterHandler
             $amountDollar = (1.0 / (float)$rateOne) * (float)$amount;
             $convertedAmount = $amountDollar *  1;
         } else {
-            while ($row =  $rateOne->fetch_assoc()) {
+            while ($row = $rateOne->fetch_assoc()) {
                 $rowsOne[] = $row;
             }
             while ($row =  $rateTwo->fetch_assoc()) {

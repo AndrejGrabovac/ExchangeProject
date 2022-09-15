@@ -1,5 +1,5 @@
 <?php
-require(SYSTEM . 'model/AbstractPage.class.php');
+require_once(SYSTEM . 'model/AbstractPage.class.php');
 require(SYSTEM . 'util/ConverterHandler.class.php');
 
 class ConvertPage extends AbstractPage

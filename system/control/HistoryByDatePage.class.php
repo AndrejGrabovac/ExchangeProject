@@ -1,5 +1,5 @@
 <?php
-require(SYSTEM . 'model/AbstractPage.class.php');
+require_once(SYSTEM . 'model/AbstractPage.class.php');
 require(SYSTEM . 'util/HistoryRateHandler.class.php');
 
 class HistoryByDatePage extends AbstractPage

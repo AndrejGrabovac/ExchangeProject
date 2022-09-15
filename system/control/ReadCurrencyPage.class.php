@@ -1,7 +1,7 @@
 <?php
 require(SYSTEM . 'util/CurrenciesHandler.class.php');
 require(SYSTEM . 'util/CurrencyCRUDHandler.class.php');
-require(SYSTEM . 'model/AbstractPage.class.php');
+require_once(SYSTEM . 'model/AbstractPage.class.php');
 
 class ReadCurrencyPage extends AbstractPage
 {

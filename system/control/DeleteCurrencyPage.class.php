@@ -1,5 +1,5 @@
 <?php
-require(SYSTEM . 'model/AbstractPage.class.php');
+require_once(SYSTEM . 'model/AbstractPage.class.php');
 require(SYSTEM . 'util/CurrenciesHandler.class.php');
 require(SYSTEM . 'util/CurrencyCRUDHandler.class.php');
 

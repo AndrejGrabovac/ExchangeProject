@@ -1,5 +1,5 @@
 <?php
-define('SYSTEM', __DIR__.'/');
+define('SYSTEM', '/xampp/htdocs/ExchangeProject/system/');
 
 require(SYSTEM . 'core.functions.php');
 require(SYSTEM . 'util/RequestHandler.class.php');

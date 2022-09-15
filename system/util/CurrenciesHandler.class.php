@@ -1,5 +1,5 @@
 <?php
-require('ApiHandler.class.php');
+require_once('ApiHandler.class.php');
 
 class CurrenciesHandler
 {

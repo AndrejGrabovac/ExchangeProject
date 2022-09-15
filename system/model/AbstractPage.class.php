@@ -1,6 +1,7 @@
 <?php
 
-abstract class AbstractPage {
+abstract class AbstractPage
+{
 
     function __construct() {
         $this->code();
