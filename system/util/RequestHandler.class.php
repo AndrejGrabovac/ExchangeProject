@@ -1,6 +1,15 @@
 <?php
-class RequestHandler{
-
+/**
+ * klasa RequestHandler sluzi za obradivanje get zahtjeva iz url-a
+ *
+ * @author Andrej Grabovac
+ */
+class RequestHandler
+{
+    /**
+     * ako stranica postoji provjerava da li postoji klasa tog imena, ako postoji poziva se i izvrsava
+     * ako ne postoji izbacuje Exception error
+     */
     public function __construct($className)
     {
         $className = $className.'Page';
@@ -19,6 +28,10 @@ class RequestHandler{
         }
     }
 
+    /**
+     * handle() funkcija pomocu get uzima page koji zovemo te konstruktor proslijedi ime page-a
+     * u slucaju da page ne postoji vraca nas na index stranicu
+     */
     public static function handle()
     {
         if (!empty($_POST['page']) || !empty($_GET['page'])) {

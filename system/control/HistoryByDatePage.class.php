@@ -2,9 +2,17 @@
 require_once(SYSTEM . 'model/AbstractPage.class.php');
 require(SYSTEM . 'util/HistoryRateHandler.class.php');
 
+
+/**
+ * HistoryByDate upravljamo povijesti valuta u bazi podataka
+ *
+ * @author Andrej Grabovac
+ */
 class HistoryByDatePage extends AbstractPage
 {
-
+    /**
+     * funckija code() uzima datum pomocu get iz url-a te pozivamo HistoryRateHandler
+     */
     public function code()
     {
         $this->template = 'historybydate';

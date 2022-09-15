@@ -1,8 +1,18 @@
 <?php
+
+require_once(SYSTEM . 'model/AbstractPage.class.php');
+/**
+ * INdexPAge klasa koja sadrzi sve moguce radnje koje korisnik moze napraviti
+ *
+ * @author Andrej Grabovac
+ */
 class IndexPage extends AbstractPage
 {
     function code()
     {
+        /**
+         * funckija code() sadrzi sve url koje korisnik moze koristiti
+         */
         $this->template = 'currency';
 
         $status = "

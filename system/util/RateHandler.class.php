@@ -1,9 +1,19 @@
 <?php
-
 require_once('ApiHandler.class.php');
+
+/**
+ * klasa rateHandler obraduje sve vezano zua tecajeve valuta
+ *
+ * @author Andrej Grabovac
+ */
 
 class RateHandler
 {
+    /**
+     * checkIfEmpty() funkcija provjerava da li je tablica rates prazna
+     *
+     * @return boolean
+     */
     public static function checkIfEmpty()
     {
         $sql = "SELECT * FROM rates";
@@ -13,24 +23,34 @@ class RateHandler
         else return false;
     }
 
+    /**
+     * insertLatest() ubacuje valute na datum koji je zabiljezen(timestamp) i tecaj valute
+     *
+     * @param string $code
+     * @param date $date
+     * @param float $rate
+     */
     public static function insertLatest($code, $date, $rate)
     {
         $sql = "INSERT INTO rates(code, onDate, rate) VAlUES ('" . $code . "','" . $date . "', '" . $rate . "')";
         AppCore::getDB()->sendQuery($sql);
     }
 
+    /**
+     * updateLatest() funkcija ubacuje najnovije tecajeve u tablicu
+     */
     public static function updateLatest()
     {
         $sql = "SELECT code FROM currency";
         $query = AppCore::getDB()->sendQuery($sql);
 
-        $fetchedData = array();
+        $data = array();
 
         while ($row = $query->fetch_assoc()) {
-            $fetchedData[] = $row;
+            $data[] = $row;
         }
 
-        $dbCode = array_column($fetchedData, 'code');
+        $dbCode = array_column($data, 'code');
         $latestRates = apiHandle::latestRate();
         $onDate = date('Y-m-d', $latestRates['timestamp']);
         $dateNow = date_create()->format("Y-m-d");
@@ -51,17 +71,24 @@ class RateHandler
         }
     }
 
+    /**
+     * getSelectedRate() klasa prima argument $code koji korisnik unese da mu se ispise
+     *
+     * @param string $code
+     *
+     * @return array $data
+     */
     public static function getSelectedRate($code)
     {
         $sql = "SELECT code, rate FROM rates where code = ('" . $code . "') AND onDate = ('" . date("Y-m-d") . "')";
 
-        $fetchedData = array();
+        $data = array();
         $query = AppCore::getDB()->sendQuery($sql);
 
         while ($row = $query->fetch_assoc()) {
-            $fetchedData[] = $row;
+            $data[] = $row;
         }
 
-        return $fetchedData;
+        return $data;
     }
 }

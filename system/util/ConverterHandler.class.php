@@ -1,8 +1,22 @@
 <?php
 require_once('ApiHandler.class.php');
 
+/**
+ * klsa converterHandler ima funckioja za pretvarenje jednu valute u drugu te iznos
+ *
+ * @author Andrej Grabovac
+ */
 class ConverterHandler
 {
+    /**
+     * convert() funkcija pretvara jednu valutu u drugu pomocu bazne valute USD
+     *
+     * @param string $currencyOne
+     * @param string $currencyTwo
+     * @param string $amount
+     *
+     * @return float $convertedAmount
+     */
     public static function Convert($currencyOne, $currencyTwo, $amount)
     {
         $sql = "SELECT rate FROM rates WHERE code = '" . $currencyOne . "'";
